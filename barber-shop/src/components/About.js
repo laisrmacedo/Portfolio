@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { Photo } from "./Photo";
+import photo1 from "../assets/photo1.jpeg"
+import { useEffect } from "react";
 
 const Container = styled.main`
   height: 100vh;
@@ -7,8 +10,9 @@ const Container = styled.main`
   display: flex;
   align-items: start;
   justify-content: start;
-  flex-direction: column;
-  border: solid 1px red;
+  position: relative;
+  /* flex-direction: column; */
+  /* border: solid 1px red; */
   `
 const Apresentation = styled.section`
   height: 82%;
@@ -32,8 +36,10 @@ const Apresentation = styled.section`
 `
 
 export const About = () => {
+
   return (
     <Container>
+      <Photo className="init-hidden-off"photo={photo1}></Photo>
       <Apresentation>
         <h1>You Can’t Trust <span>Just Anyone</span> With Your Hair.</h1>
         <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
