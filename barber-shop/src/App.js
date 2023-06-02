@@ -3,6 +3,7 @@ import { About } from "./components/About";
 import styled from "styled-components";
 import instagram from './assets/instagram.png'
 import whatsapp from './assets/whatsapp.png'
+import { useEffect } from "react";
 
 const Container = styled.div`
   height: 400vh;
@@ -28,6 +29,16 @@ const SocialMedia = styled.div`
 `
 
 function App() {
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      console.log(entries)
+      
+      intersectionObserver.observe(document.getElementsByClassName('.init-hidden-off'))
+      
+      // return () => intersectionObserver.disconnect()
+    })
+  }, [])
+
   return (
     <Container >
      <Home/>
