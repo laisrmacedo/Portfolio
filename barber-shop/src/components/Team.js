@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Photo } from "./Photo"
+import { Photo } from "./Photo";
 import photo1 from "../assets/photo1.jpeg"
 import { useEffect } from "react";
 
