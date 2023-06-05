@@ -38,7 +38,7 @@ const Apresentation = styled.section`
   }
 `
 
-export const About = () => {
+export const Offer = () => {
   const targetRef = useRef(null);
   const [showComponent, setShowComponent] = useState(false);
   
@@ -74,13 +74,13 @@ export const About = () => {
 
   return (
     <Container ref={targetRef}>
-      <Photo className="init-hidden-off" photo={photo1} show={showComponent}></Photo>
       <Apresentation>
       <FadeIn show={showComponent}>
-        <h1>You Can’t Trust <span>Just Anyone</span> With Your Hair.</h1>
+        <h1>We Offer The Best Value</h1>
         <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
         </FadeIn>
       </Apresentation>
+      <Photo className="init-hidden-off" photo={photo1} show={showComponent}></Photo>
     </Container>
   );
 }

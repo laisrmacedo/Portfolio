@@ -4,6 +4,7 @@ import styled from "styled-components";
 import instagram from './assets/instagram.png'
 import whatsapp from './assets/whatsapp.png'
 import { useEffect } from "react";
+import { Offer } from "./components/Offer";
 
 const Container = styled.div`
   height: 400vh;
@@ -43,6 +44,7 @@ function App() {
     <Container >
      <Home/>
      <About/>
+     <Offer/>
      <SocialMedia>
       <img src={instagram}/>
       <img src={whatsapp}/>

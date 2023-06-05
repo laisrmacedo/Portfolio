@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { useRef } from "react";
+import SlideIn from "./animations/SlideIn";
+import FadeIn from "./animations/FadeIn";
 
 const Container = styled.section`
   height: 100%;
@@ -37,49 +38,17 @@ const Container = styled.section`
 `
 
 export const Photo = (props) => {
-  const targetRef = useRef(null);
-  
-  useEffect(() => {
-    const callback = (entries, observer) => {
-      const photo = document.querySelector('img')
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // O elemento entrou na área visível
-          console.log(photo);
-        } else {
-          // O elemento saiu da área visível
-          console.log('Elemento invisível');
-        }
-      });
-    };
-
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5 // Ajuste o limiar de interseção conforme necessário
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
-
-    // Ao desmontar o componente, pare a observação
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
-    };
-  }, []);
 
   return(
-    <Container ref={targetRef}>
+    <Container >
       <div className="box-image">
-        <img className="init-hidden-off" src={props.photo}/>
+      <FadeIn show={props.show}>
+        <img  className="init-hidden-off" src={props.photo}/>
+      </FadeIn>
       </div>
-      <div className="box-color"></div>
-
+      <SlideIn show={props.show}>
+        <span className="box-color"></span>  
+      </SlideIn>
     </Container>
   )
 }
