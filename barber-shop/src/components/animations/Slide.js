@@ -1,13 +1,13 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './SlideIn.css'; // Estilos CSS para a animação
+import './animation.css'; // Estilos CSS para a animação
 
-const SlideIn = ({ show, children }) => {
+const Slide = ({ show, classCSS, children }) => {
   return (
     <CSSTransition
       in={show}
       timeout={500}
-      classNames="slide-in"
+      classNames={classCSS}
       unmountOnExit
     >
       <>{children}</>
@@ -15,4 +15,4 @@ const SlideIn = ({ show, children }) => {
   );
 };
 
-export default SlideIn;
+export default Slide;

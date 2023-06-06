@@ -1,6 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './SlideIn.css'; // Estilos CSS para a animação
+import './animation.css'; // Estilos CSS para a animação
 
 const FadeIn = ({ show, children }) => {
   return (

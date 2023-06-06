@@ -19,7 +19,8 @@ const Container = styled.main`
   `
 const Apresentation = styled.section`
   height: 82%;
-  width: 40%;
+  width: 50%;
+  padding-left: 100px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -30,11 +31,8 @@ const Apresentation = styled.section`
     font-size: 48px;
   }
   p{
-    font-size: 16px;
+    font-size: 20px;
     color: #7b2609;
-  }
-  span{
-    color: #943208;
   }
 `
 
@@ -74,11 +72,12 @@ export const About = () => {
 
   return (
     <Container ref={targetRef}>
-      <Photo className="init-hidden-off" photo={photo1} show={showComponent}></Photo>
+      <Photo className="init-hidden-off" photo={photo1} show={showComponent} classCSS={"slide-in"}></Photo>
       <Apresentation>
-      <FadeIn show={showComponent}>
-        <h1>You Can’t Trust <span>Just Anyone</span> With Your Hair.</h1>
-        <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+        <FadeIn show={showComponent}>
+          <h1>Precision and Attitude</h1>
+          <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+          <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
         </FadeIn>
       </Apresentation>
     </Container>

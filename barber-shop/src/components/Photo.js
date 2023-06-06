@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
-import SlideIn from "./animations/SlideIn";
+import Slide from "./animations/Slide";
 import FadeIn from "./animations/FadeIn";
 
 const Container = styled.section`
@@ -10,10 +9,11 @@ const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   .box-image{
     height: 70%;
-    width: 42%;
+    width: 70%;
     position: absolute;
     z-index: 1;
     overflow-y: hidden;
@@ -27,7 +27,7 @@ const Container = styled.section`
 
 .box-color{
   height: 25%;
-  width: 47%;
+  width: 90%;
   background: #908471;
   position: absolute;
   z-index: 0;
@@ -46,9 +46,9 @@ export const Photo = (props) => {
         <img  className="init-hidden-off" src={props.photo}/>
       </FadeIn>
       </div>
-      <SlideIn show={props.show}>
+      <Slide classCSS={props.classCSS} show={props.show}>
         <span className="box-color"></span>  
-      </SlideIn>
+      </Slide>
     </Container>
   )
 }

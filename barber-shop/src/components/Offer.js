@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Photo } from "./Photo"
-import photo1 from "../assets/photo1.jpeg"
+import photo2 from "../assets/photo2.jpeg"
 import { useEffect, useState } from "react";
 
 import { useRef } from "react";
@@ -19,7 +19,7 @@ const Container = styled.main`
   `
 const Apresentation = styled.section`
   height: 82%;
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -30,11 +30,14 @@ const Apresentation = styled.section`
     font-size: 48px;
   }
   p{
-    font-size: 16px;
+    font-size: 20px;
     color: #7b2609;
   }
   span{
     color: #943208;
+  }
+  ul{
+    line-height: 30px;
   }
 `
 
@@ -75,12 +78,23 @@ export const Offer = () => {
   return (
     <Container ref={targetRef}>
       <Apresentation>
-      <FadeIn show={showComponent}>
-        <h1>We Offer The Best Value</h1>
-        <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+        <FadeIn show={showComponent}>
+          <h1>We Offer The Best Value</h1>
+          <p>Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+          <ul>
+            <li>Men’s Haircut .................................. $30</li>
+            <li>Children’s Haircut Basic ..................... $20</li>
+            <li>Children’s Haircut Basic Fade .............. $25</li>
+            <li>Special Cuts .................................... $30</li>
+            <li>Special Cuts .................................... $30</li>
+            <li>Men’s Haircut .................................. $30</li>
+            <li>Men’s Haircut .................................. $30</li>
+            <li>Men’s Haircut .................................. $30</li>
+            <li>Men’s Haircut .................................. $30</li>
+          </ul>
         </FadeIn>
       </Apresentation>
-      <Photo className="init-hidden-off" photo={photo1} show={showComponent}></Photo>
+      <Photo className="init-hidden-off" photo={photo2} show={showComponent} classCSS={"slide-in-left"}></Photo>
     </Container>
   );
 }

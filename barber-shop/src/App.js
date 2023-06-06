@@ -3,8 +3,9 @@ import { About } from "./components/About";
 import styled from "styled-components";
 import instagram from './assets/instagram.png'
 import whatsapp from './assets/whatsapp.png'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Offer } from "./components/Offer";
+import { Cutting } from "./components/animations/Cutting";
 
 const Container = styled.div`
   height: 400vh;
@@ -15,6 +16,14 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
   /* border: solid 2px yellow; */
+`
+
+const Loading = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const SocialMedia = styled.div`
   height: 100px;
@@ -30,26 +39,28 @@ const SocialMedia = styled.div`
 `
 
 function App() {
-  useEffect(() => {
-    const intersectionObserver = new IntersectionObserver((entries) => {
-      console.log(entries)
-      
-      intersectionObserver.observe(document.getElementsByClassName('.init-hidden-off'))
-      
-      // return () => intersectionObserver.disconnect()
-    })
-  }, [])
+  const [loading, isLoading] = useState(true)
+
+  setTimeout(() => isLoading(false), 1500)
 
   return (
-    <Container >
-     <Home/>
-     <About/>
-     <Offer/>
-     <SocialMedia>
-      <img src={instagram}/>
-      <img src={whatsapp}/>
-     </SocialMedia>
-    </Container>
+    <>
+    {loading ?  
+      <Loading>
+        <Cutting/> 
+      </Loading> 
+      : 
+      <Container >
+        <Home/>
+        <About/>
+        <Offer/>
+        <SocialMedia>
+          <img src={instagram}/>
+          <img src={whatsapp}/>
+        </SocialMedia>
+      </Container>
+    }
+    </>
   );
 }
 
