@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'League Spartan', sans-serif;
 
     ::-webkit-scrollbar-track {

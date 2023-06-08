@@ -43,7 +43,7 @@ export const Photo = (props) => {
     <Container >
       <div className="box-image">
       <FadeIn show={props.show}>
-        <img  className="init-hidden-off" src={props.photo}/>
+        <img src={props.photo}/>
       </FadeIn>
       </div>
       <Slide classCSS={props.classCSS} show={props.show}>

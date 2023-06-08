@@ -1,0 +1,14 @@
+{
+  "avaliation" : [
+    {
+      "name" : "lais",
+      "stars" : 4,
+      "comment" : ""
+    },
+    {
+      "name" : "albert",
+      "stars" : 5,
+      "comment" : ""
+    }
+  ]
+}

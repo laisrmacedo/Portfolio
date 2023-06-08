@@ -6,9 +6,11 @@ import whatsapp from './assets/whatsapp.png'
 import { useEffect, useState } from "react";
 import { Offer } from "./components/Offer";
 import { Cutting } from "./components/animations/Cutting";
+import { Team } from "./components/Team";
+import { Comments } from "./components/comments/Comments";
 
 const Container = styled.div`
-  height: 400vh;
+  height: 500vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -41,7 +43,7 @@ const SocialMedia = styled.div`
 function App() {
   const [loading, isLoading] = useState(true)
 
-  setTimeout(() => isLoading(false), 1500)
+  setTimeout(() => isLoading(false), 2000)
 
   return (
     <>
@@ -54,6 +56,8 @@ function App() {
         <Home/>
         <About/>
         <Offer/>
+        <Team/>
+        <Comments/>
         <SocialMedia>
           <img src={instagram}/>
           <img src={whatsapp}/>
