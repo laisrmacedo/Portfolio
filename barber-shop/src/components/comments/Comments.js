@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import star from "../../assets/star.png"
-import client from "../../assets/barber1.jpeg"
+import client from "../../assets/client-1.jpeg"
 
 const Container = styled.section`
   height: 100vh;
@@ -14,30 +14,18 @@ const Container = styled.section`
   flex-direction: column;
   gap: 10%;
   background-color: #cab19e;
-  /* border: solid 1px red; */
   
   .container-comments{
+    /* border: solid 1px red; */
     max-width: 1200px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    height: 50%;
+    justify-content: space-between;
+    /* gap: 40px; */
+    height: 70%;
     width: 100%;
-  }
-  
-  .box-comment{
-    height: 90%;
-    width: 60%;
-    background-color: #fff;
-    opacity: 0.9;
-    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.1);
-    display: flex;
-    /* gap: 28px; */
-    
     >span{
-      /* border: solid 1px red; */
-      width: 40%;
+      width: 55%;
       height: 100%;
       z-index: 1;
       overflow-y: hidden;
@@ -47,27 +35,28 @@ const Container = styled.section`
         width: 100%;
       }
     }
+  }
+  
+  .box-comment{
+    height: 100%;
+    width: 40%;
+
     
-    div{
-      padding: 28px;
-      width: 60%;
+    span{
+      /* border: solid 1px red; */
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      span{
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        img{
-          height: 20px;
-        }
-      }
+      align-items: start;
+      justify-content: center;
+      gap: 24px;
+      height: 70%;
+      width: 70%;
     }
 
     h3{
-      font-size: 28px;
+      font-size: 20px;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
 
@@ -75,9 +64,9 @@ const Container = styled.section`
     p{
       font-size: 20px;
       color: #333;
-      font-weight: 100;
+      font-weight: 400;
       line-height: 25px;
-      text-align: center;
+      text-align: left;
     }
   }
   
@@ -120,19 +109,14 @@ export const Comments = () => {
   return(
     <Container ref={targetRef}>
       <div className="container-comments">
+        <span>
+          <img src={client}/>
+        </span>
         <div className="box-comment">
           <span>
-            <img src={client}/>
-          </span>
-          <div>
-            <h3>Lorem ipsum</h3>
-            <span>
-              <img src={star}/>
-              <img src={star}/>
-              <img src={star}/>
-            </span>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique felis vel velit aliquam, vel cursus justo placerat. Morbi in sapien at metus fermentum mattis ut eu libero. Aliquam tincidunta."</p>
-          </div>
+            <h3>Lorem ipsum</h3>
+          </span>
         </div>
       </div>
       
