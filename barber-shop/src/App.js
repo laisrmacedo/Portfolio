@@ -8,9 +8,10 @@ import { Offer } from "./components/Offer";
 import { Cutting } from "./components/animations/Cutting";
 import { Team } from "./components/Team";
 import { Comments } from "./components/comments/Comments";
+import { Footer } from "./components/Footer";
 
 const Container = styled.div`
-  height: 500vh;
+  height: 600vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -58,6 +59,7 @@ function App() {
         <Offer/>
         <Team/>
         <Comments/>
+        <Footer/>
         <SocialMedia>
           <img src={instagram}/>
           <img src={whatsapp}/>

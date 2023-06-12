@@ -7,7 +7,7 @@ import FadeIn from "./animations/FadeIn";
 import Slide from "./animations/Slide";
 
 const Background = styled.div`
-  height: 25%;
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: start;
