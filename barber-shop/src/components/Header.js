@@ -37,6 +37,17 @@ const Container = styled.header`
       color: #908471;
     }
   }
+
+  .menu{
+    @media screen and (max-width: 480px){
+      display: none;
+    }
+  }
+  .barras{
+    @media screen and (min-width: 481px){
+      display: none;
+    }
+  }
 `
 
 export const Header = () => {
@@ -45,7 +56,10 @@ export const Header = () => {
      <div>
       <img src={logo}/>
      </div>
-     <span>
+     <span className='barras'>
+      <a>|||</a>
+     </span>
+     <span className='menu'>
         <Link to="home" smooth={true} duration={500} cursor={"pointer"}>Home</Link>
         <Link to="about-us" smooth={true} duration={500}>About Us</Link>
         <Link to="services" smooth={true} duration={500}>Services</Link>

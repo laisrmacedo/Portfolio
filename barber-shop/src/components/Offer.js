@@ -51,7 +51,7 @@ export const Offer = () => {
         if (entry.isIntersecting) {
           setShowComponent(true)
         } else {
-          setShowComponent(false)
+          // setShowComponent(false)
         }
       });
     };

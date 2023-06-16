@@ -46,7 +46,7 @@ export const About = () => {
         if (entry.isIntersecting) {
           setShowComponent(true)
         } else {
-          setShowComponent(false)
+          // setShowComponent(false)
         }
       });
     };

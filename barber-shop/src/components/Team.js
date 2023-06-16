@@ -69,7 +69,7 @@ export const Team = () => {
         if (entry.isIntersecting) {
           setShowComponent(true)
         } else {
-          setShowComponent(false)
+          // setShowComponent(false)
         }
       });
     };
