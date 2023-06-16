@@ -94,7 +94,7 @@ export const Team = () => {
   }, []);
 
   return(
-    <Container ref={targetRef}>
+    <Container ref={targetRef} id="team">
       <h1>The Dream Team</h1>
       <FadeIn show={showComponent}>
         <div>

@@ -1,5 +1,6 @@
 import logo from '../assets/Logo.png'
 import styled from "styled-components";
+import { Link } from 'react-scroll';
 
 const Container = styled.header`
   min-height: 18%;
@@ -28,6 +29,13 @@ const Container = styled.header`
 
   a{
     color: #FFF;
+    &:hover{
+      color: #f8a481;
+      cursor: pointer;
+    }
+    &:active{
+      color: #908471;
+    }
   }
 `
 
@@ -38,10 +46,10 @@ export const Header = () => {
       <img src={logo}/>
      </div>
      <span>
-      <a>Home</a>
-      <a>About Us</a>
-      <a>The Team</a>
-      <a>Services</a>
+        <Link to="home" smooth={true} duration={500} cursor={"pointer"}>Home</Link>
+        <Link to="about-us" smooth={true} duration={500}>About Us</Link>
+        <Link to="services" smooth={true} duration={500}>Services</Link>
+        <Link to="team" smooth={true} duration={500}>The Team</Link>
      </span>
     </Container>
   );

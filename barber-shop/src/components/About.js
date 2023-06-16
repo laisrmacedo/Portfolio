@@ -71,7 +71,7 @@ export const About = () => {
   }, []);
 
   return (
-    <Container ref={targetRef}>
+    <Container ref={targetRef} id="about-us">
       <Photo className="init-hidden-off" photo={photo1} show={showComponent} classCSS={"slide-in"}></Photo>
       <Apresentation>
         <FadeIn show={showComponent}>

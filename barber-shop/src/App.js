@@ -10,8 +10,9 @@ import { Team } from "./components/Team";
 import { Comments } from "./components/comments/Comments";
 import { Footer } from "./components/Footer";
 
+
 const Container = styled.div`
-  height: 600vh;
+  height: 650vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -54,6 +55,7 @@ function App() {
       </Loading> 
       : 
       <Container >
+
         <Home/>
         <About/>
         <Offer/>

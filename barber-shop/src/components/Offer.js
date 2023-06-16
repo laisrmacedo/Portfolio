@@ -76,7 +76,7 @@ export const Offer = () => {
   }, []);
 
   return (
-    <Container ref={targetRef}>
+    <Container ref={targetRef} id="services">
       <Apresentation>
         <FadeIn show={showComponent}>
           <h1>We Offer The Best Value</h1>

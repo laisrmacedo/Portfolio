@@ -94,7 +94,7 @@ export const Home = () => {
     };
   }, []);
   return (
-    <Background >
+    <Background id="home">
       <Container>
         <Header></Header>
         <FadeIn show={showComponent}>
