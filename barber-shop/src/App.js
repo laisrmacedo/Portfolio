@@ -40,6 +40,9 @@ const SocialMedia = styled.div`
   bottom: 0px;
   left: 90px;
   /* border: solid 2px yellow; */
+  @media screen and (max-width: 481px){
+    display: none;
+  }
 `
 
 function App() {

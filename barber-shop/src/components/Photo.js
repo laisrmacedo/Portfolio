@@ -10,6 +10,11 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
+  /* border: 1px solid red; */
+  @media screen and (max-width: 481px){
+    width: 100%;
+    height: 50%;
+  }
 
   .box-image{
     height: 70%;
@@ -17,6 +22,10 @@ const Container = styled.section`
     position: absolute;
     z-index: 1;
     overflow-y: hidden;
+    @media screen and (max-width: 481px){
+      width: 90%;
+      height: 90%;
+    }
     img{
       object-fit: cover;
       height: 100%;
@@ -33,6 +42,12 @@ const Container = styled.section`
   z-index: 0;
   left: 30px;
   bottom: 110px;
+  @media screen and (max-width: 481px){
+    height: 50%;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+  }
 }
 
 `

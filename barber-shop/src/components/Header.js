@@ -44,6 +44,11 @@ const Container = styled.header`
     }
   }
   .barras{
+    a{
+      transform: rotate(90deg);
+      /* margin-right: 40px; */
+      font-size: 32px;
+    }
     @media screen and (min-width: 481px){
       display: none;
     }

@@ -14,8 +14,14 @@ const Container = styled.main`
   align-items: start;
   justify-content: start;
   position: relative;
+  /* flex-direction: row; */
+  
   /* flex-direction: column; */
   /* border: solid 1px red; */
+  @media screen and (max-width: 481px){
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+  }
   `
 const Apresentation = styled.section`
   height: 82%;
@@ -26,6 +32,11 @@ const Apresentation = styled.section`
   flex-direction: column;
   gap: 24px;
   z-index: 1;
+  @media screen and (max-width: 481px){
+    padding: 0 30px;
+    width: 100%;
+    height: 50%;
+  }
 
   h1{
     font-size: 48px;

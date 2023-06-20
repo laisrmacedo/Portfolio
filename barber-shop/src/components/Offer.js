@@ -14,9 +14,13 @@ const Container = styled.main`
   align-items: start;
   justify-content: start;
   position: relative;
+  flex-wrap: wrap;
   /* flex-direction: column; */
   /* border: solid 1px red; */
-  `
+  @media screen and (min-width: 481px){
+    }
+`
+
 const Apresentation = styled.section`
   height: 82%;
   width: 50%;
@@ -25,6 +29,11 @@ const Apresentation = styled.section`
   flex-direction: column;
   gap: 24px;
   z-index: 1;
+  @media screen and (max-width: 481px){
+    padding: 30px;
+    width: 100%;
+    height: 50%;
+  }
 
   h1{
     font-size: 48px;
@@ -38,6 +47,9 @@ const Apresentation = styled.section`
   }
   ul{
     line-height: 30px;
+    @media screen and (max-width: 481px){
+      line-height: 20px;
+    }
   }
 `
 

@@ -21,6 +21,9 @@ const Background = styled.div`
     z-index: 0;
     right: 0px;
     overflow-y: hidden;
+    @media screen and (max-width: 481px){
+      width: 100%;
+    }
     img{
       object-fit: cover;
       height: 100%;
@@ -37,9 +40,12 @@ const Container = styled.main`
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  /* border: solid 1px red; */
+  @media screen and (max-width: 481px){
+    padding: 0 30px;
+  }
   `
 const Apresentation = styled.section`
+/* border: solid 1px red; */
   height: 82%;
   width: 40%;
   display: flex;
@@ -47,16 +53,31 @@ const Apresentation = styled.section`
   flex-direction: column;
   gap: 24px;
   z-index: 1;
+  @media screen and (max-width: 481px){
+    width: 100%;
+    justify-content: end;
+    margin-bottom: 100px;
+    /* height: 100%; */
+  }
 
   h1{
     font-size: 48px;
+    @media screen and (max-width: 481px){
+      color: #fff;
+    }
   }
   p{
     font-size: 16px;
     color: #7b2609;
+    @media screen and (max-width: 481px){
+      color: #fff;
+    }
   }
   span{
     color: #943208;
+    @media screen and (max-width: 481px){
+      color: #f8a481;
+    }
   }
 `
 
