@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import star from "../../assets/star.png"
 import client from "../../assets/client-1.jpeg"
+import FadeIn from "../animations/FadeIn";
 
 const Container = styled.section`
   height: 100vh;
@@ -15,6 +16,7 @@ const Container = styled.section`
   gap: 10%;
   background-color: #cab19e;
   
+  
   .container-comments{
     /* border: solid 1px red; */
     max-width: 1200px;
@@ -24,6 +26,11 @@ const Container = styled.section`
     /* gap: 40px; */
     height: 70%;
     width: 100%;
+    flex-wrap: wrap;
+    @media screen and (max-width: 481px){
+        height: 90%;
+        justify-content: center;
+      }
     >span{
       width: 55%;
       height: 100%;
@@ -34,40 +41,92 @@ const Container = styled.section`
         object-fit: cover;
         width: 100%;
       }
+      @media screen and (max-width: 481px){
+        width: 100%;
+        height: 40%;
+      }
     }
   }
   
   .box-comment{
     height: 100%;
     width: 40%;
-
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    @media screen and (max-width: 481px){
+      width: 100%;
+      height: 60%;
+      align-items: center;
+    }
     
-    span{
-      /* border: solid 1px red; */
+    >span{
       display: flex;
       flex-direction: column;
       align-items: start;
       justify-content: center;
       gap: 24px;
-      height: 70%;
+      height: 90%;
       width: 70%;
+      @media screen and (max-width: 481px){
+        align-items: center;
+      }
     }
-
+    
     h3{
       font-size: 20px;
       text-transform: uppercase;
       font-weight: 700;
     }
-
-
-
+    
+    
+    
     p{
       font-size: 20px;
       color: #333;
       font-weight: 400;
       line-height: 25px;
       text-align: left;
+      @media screen and (max-width: 481px){
+        text-align: center;
+      }
     }
+  }
+  
+  .arrow{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    /* border: solid 1px red; */
+    @media screen and (max-width: 481px){
+      justify-content: center;
+      }
+    div{
+      background-color: #908471;
+      color: #cab19e;
+      font-size: 36px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .barra{
+    width: 40%;
+    background-color: #908471;
+    height: 5px;
+    border-radius: 2px;
+    span{
+      display: block;
+      height: 100%;
+      width: 20%;
+      background-color: #333;
+    }
+
   }
   
 `
@@ -82,7 +141,7 @@ export const Comments = () => {
         if (entry.isIntersecting) {
           setShowComponent(true)
         } else {
-          setShowComponent(false)
+          // setShowComponent(false)
         }
       });
     };
@@ -107,16 +166,26 @@ export const Comments = () => {
   }, []);
 
   return(
-    <Container ref={targetRef}>
+    <Container>
       <div className="container-comments">
-        <span>
-          <img src={client}/>
+        <span ref={targetRef}>
+          <FadeIn show={showComponent}>
+            <img src={client}/>
+          </FadeIn>
         </span>
         <div className="box-comment">
           <span>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique felis vel velit aliquam, vel cursus justo placerat. Morbi in sapien at metus fermentum mattis ut eu libero. Aliquam tincidunta."</p>
             <h3>Lorem ipsum</h3>
           </span>
+          <div className="arrow">
+            <div>&lsaquo;</div>
+            <span className="barra">
+              <span></span>
+              {/* <span></span> */}
+            </span>
+            <div>&rsaquo;	</div>
+          </div>
         </div>
       </div>
       
