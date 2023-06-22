@@ -16,6 +16,7 @@ const Container = styled.footer`
     filter: saturate(0);
   }
 
+
   .location{
     width: 100%;
     height: 100vh;
@@ -24,20 +25,31 @@ const Container = styled.footer`
     flex-direction: column;
     justify-content: space-between;
     /* border: 1px yellow solid; */
-
     p{
       margin-top: 60px;
       width: 100%;
       font-size: 48px;
       text-align: center;
       font-weight: 500;
+      @media screen and (max-width: 481px){
+        padding: 30px;
+      }
     }
   }
 
   .info{
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px blue solid; */
+    @media screen and (max-width: 481px){
+      height: 40%;
+      flex-direction: column;
+      justify-content: space-evenly;;
+      align-items: center;
+      padding: 0 30px;
+    }
     div{
     display: flex;
     flex-direction: column;
@@ -50,7 +62,6 @@ const Container = styled.footer`
         font-size: 20px;
         /* color: #943208; */
       }
-      /* border: 1px blue solid; */
     }
 
     button{
@@ -75,15 +86,20 @@ const Container = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
+    @media screen and (max-width: 481px){
+        padding: 0 30px;
+
+      }
     img{
       height: 40px;
     }
     span{
       /* width: 50%; */
       display: flex;
-      /* justify-content: end; */
       gap:60px;
+      @media screen and (max-width: 481px){
+        gap: 30px;
+      }
     }
 
     a{
@@ -95,6 +111,9 @@ const Container = styled.footer`
       &:active{
         color: #908471;
       }
+    }
+    .me{
+      color: #999
     }
   }
 `
@@ -134,8 +153,8 @@ export const Footer = () => {
           <Link to="services" smooth={true} duration={500}>Services</Link>
           <Link to="team" smooth={true} duration={500}>The Team</Link>
         </span>
-        <p>2023 - All right reserved</p>
-        {/* <p>2023 - All right reserved</p> */}
+        <p>	&copy; 2023 - All right reserved</p>
+        <p className="me">Build by @laisrmacedo</p>
       </div>
     </Container>
   );

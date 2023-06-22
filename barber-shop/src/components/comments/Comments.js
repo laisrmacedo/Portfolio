@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import star from "../../assets/star.png"
 import client from "../../assets/client-1.jpeg"
 import FadeIn from "../animations/FadeIn";
+import allComments from "./allComments.json"
 
 const Container = styled.section`
   height: 100vh;
@@ -113,6 +113,7 @@ const Container = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
   }
   .barra{
@@ -123,7 +124,7 @@ const Container = styled.section`
     span{
       display: block;
       height: 100%;
-      width: 20%;
+      width: calc(100% / (${(props) => (props.length)}));
       background-color: #333;
     }
 
@@ -134,7 +135,8 @@ const Container = styled.section`
 export const Comments = () => {
   const targetRef = useRef(null);
   const [showComponent, setShowComponent] = useState(false);
-  
+  const [index, setIndex] = useState(0)
+
   useEffect(() => {
     const callback = (entries, observer) => {
       entries.forEach(entry => {
@@ -163,28 +165,38 @@ export const Comments = () => {
         observer.unobserve(targetRef.current);
       }
     };
-  }, []);
+
+  }, [index]);
+
+  const changeComment = (btn) => {
+    let currentIndex = index + btn
+    
+    if(currentIndex === allComments.avaliation.length || currentIndex < 0){
+      setIndex(0)
+    }else{
+      setIndex(currentIndex)
+    }
+  }
 
   return(
-    <Container>
+    <Container length={allComments.avaliation.length - index}>
       <div className="container-comments">
         <span ref={targetRef}>
           <FadeIn show={showComponent}>
-            <img src={client}/>
+            <img src={allComments.avaliation[index].image}/>
           </FadeIn>
         </span>
         <div className="box-comment">
           <span>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique felis vel velit aliquam, vel cursus justo placerat. Morbi in sapien at metus fermentum mattis ut eu libero. Aliquam tincidunta."</p>
-            <h3>Lorem ipsum</h3>
+            <p>{allComments.avaliation[index].comment}</p>
+            <h3>{allComments.avaliation[index].name}</h3>
           </span>
           <div className="arrow">
-            <div>&lsaquo;</div>
+            <div onClick={() => changeComment(-1)}>&lsaquo;</div>
             <span className="barra">
               <span></span>
-              {/* <span></span> */}
             </span>
-            <div>&rsaquo;	</div>
+            <div onClick={() => changeComment(1)}>&rsaquo;	</div>
           </div>
         </div>
       </div>
