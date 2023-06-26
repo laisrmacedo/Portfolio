@@ -18,7 +18,6 @@ const Container = styled.section`
   
   
   .container-comments{
-    /* border: solid 1px red; */
     max-width: 1200px;
     display: flex;
     align-items: center;
@@ -28,10 +27,11 @@ const Container = styled.section`
     width: 100%;
     flex-wrap: wrap;
     @media screen and (max-width: 481px){
-        height: 90%;
-        justify-content: center;
-      }
+      height: 90%;
+      justify-content: center;
+    }
     >span{
+      /* border: solid 1px red; */
       width: 55%;
       height: 100%;
       z-index: 1;
@@ -40,6 +40,7 @@ const Container = styled.section`
         /* position: absolute; */
         object-fit: cover;
         width: 100%;
+        height: 100%;
       }
       @media screen and (max-width: 481px){
         width: 100%;
@@ -133,40 +134,7 @@ const Container = styled.section`
 `
 
 export const Comments = () => {
-  const targetRef = useRef(null);
-  const [showComponent, setShowComponent] = useState(false);
   const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setShowComponent(true)
-        } else {
-          // setShowComponent(false)
-        }
-      });
-    };
-
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5 // Ajuste o limiar de interseção conforme necessário
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
-
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
-    };
-
-  }, [index]);
 
   const changeComment = (btn) => {
     let currentIndex = index + btn
@@ -181,10 +149,8 @@ export const Comments = () => {
   return(
     <Container length={allComments.avaliation.length - index}>
       <div className="container-comments">
-        <span ref={targetRef}>
-          <FadeIn show={showComponent}>
+        <span>
             <img src={allComments.avaliation[index].image}/>
-          </FadeIn>
         </span>
         <div className="box-comment">
           <span>
